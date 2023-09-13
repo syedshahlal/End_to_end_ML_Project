@@ -26,3 +26,26 @@ Now, we create the flask app file as ```app.py``` and write our code in it and t
 python app.py
 ```
 
+To add file in the git repo
+```
+git add <filename>
+```
+or 
+```
+git add .
+```
+> Note: If there are some file in our folder that we do not want to track or do versioning then we add them to the ```.gitignore``` file
+
+To check the git status
+```
+git status
+```
+To check all the versions maintained by git
+```
+git log
+```
+
+To create a new version/commit all the changes by git
+```
+git commit -m "your comment/message"
+```
