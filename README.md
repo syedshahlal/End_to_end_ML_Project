@@ -6,6 +6,7 @@
 2. [Azure Account](https://portal.azure.com/#home)
 3. [VS Code IDE](https://code.visualstudio.com/download)
 4. [GIT cli](https://git-scm.com/downloads)
+5. [GIT Documentation](https://git-scm.com/docs/git)
 
 
 Creating conda virtual environment
@@ -48,4 +49,45 @@ git log
 To create a new version/commit all the changes by git
 ```
 git commit -m "your comment/message"
+```
+To send version/changes to the github
+```
+git push origin main
+```
+
+To check remote URl from where the files will be pushed or pulled
+```
+git remote -v
+```
+
+To setup CI/CD pipeline in Heroku we need 3 informations:
+
+1. HEROKU_EMAIL = sr.shahlal@gmail.com
+2. HEROKU_API_Key = a9f0745a-8e78-476a-af9c-dbaac1d4afd5
+3. HEROKU_APP_Name = ml-ete-app
+
+BUILD DOCKER IMAGE
+```
+docker build -t <image_name>:<tagname> .
+```
+> Note: Image name for docker must be lowercase
+
+To list docker image
+```
+docker images
+```
+
+Run docker image
+```
+docker run -p 5000:5000 -e PORT=5000 b3bb833287a8
+```
+
+To check running container in docker
+```
+docker ps
+```
+
+To stop docker container
+```
+docker stop <container_id>
 ```
