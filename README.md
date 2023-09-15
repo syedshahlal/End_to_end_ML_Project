@@ -1,6 +1,6 @@
 ## End_to_end_ML_Project
 
-### Software and account Requirements:
+### 1. Software and account Requirements:
 
 1. [Github Account](https://github.com/syedshahlal/End_to_end_ML_Project)
 2. [Azure Account](https://portal.azure.com/#home)
@@ -9,7 +9,7 @@
 5. [GIT Documentation](https://git-scm.com/docs/git)
 
 
-Creating conda virtual environment
+### 2. Creating conda virtual environment
 ```
 conda create -p venv python==3.11 -y
 ```
@@ -27,6 +27,7 @@ Now, we create the flask app file as ```app.py``` and write our code in it and t
 python app.py
 ```
 
+### 3. Github connections for push and pull
 To add file in the git repo
 ```
 git add <filename>
@@ -60,13 +61,14 @@ To check remote URl from where the files will be pushed or pulled
 git remote -v
 ```
 
+### 4. Setting up CI/CD Pipelines
 To setup CI/CD pipeline in Heroku we need 3 informations:
 
 1. HEROKU_EMAIL = sr.shahlal@gmail.com
 2. HEROKU_API_Key = <>
 3. HEROKU_APP_Name = ml-ete-app
 
-BUILD DOCKER IMAGE
+#### BUILD DOCKER IMAGE
 ```
 docker build -t <image_name>:<tagname> .
 ```
@@ -92,12 +94,22 @@ To stop docker container
 docker stop <container_id>
 ```
 
-For CI/CD Pipeline using Heroku App
+### 5. Building CI/CD Pipelines in Heroku APP
+
 1. Create a ```.github``` folder and inside the folder add another folder ```workflows``` in this workflows folder create a file ```main.yaml```
 2. ```main.yaml``` file write the github action flow
 3. push the change to the git repo
 4. open the repo in github and go to setting/secrets/actions and create New repository secret for all the secrets that has been mentioned in the ```main.yaml``` file and save them
-    > Note: That the Name* and Secret* is same as mentioned
+    > Note: That the ```Name*``` and ```Secret*``` is same as mentioned
 5. once this is done our deployment will take place automatically which we can see in the actions tab in github repo
 
 Now whenever there is any push to the repo it will automatically tigger the deployment in the heroku web app
+
+### 6. Files and Folder creation for structuring the project 
+Moving ahead we will add a ```setup.py``` file and a folder ```housing``` that we'll contain a file inside it which has to be created as ```__init__.py```
+
+Now we will write the setup coed in our ```setup.py``` file and run it 
+```
+python setup.py install
+```
+ >Note: this will generate ```build``` , ```dist``` and ```housing_predictor.egg-info``` based on what values we have passed in the ```setup.py```
