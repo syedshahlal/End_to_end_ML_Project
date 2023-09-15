@@ -91,3 +91,13 @@ To stop docker container
 ```
 docker stop <container_id>
 ```
+
+For CI/CD Pipeline using Heroku App
+1. Create a ```.github``` folder and inside the folder add another folder ```workflows``` in this workflows folder create a file ```main.yaml```
+2. ```main.yaml``` file write the github action flow
+3. push the change to the git repo
+4. open the repo in github and go to setting/secrets/actions and create New repository secret for all the secrets that has been mentioned in the ```main.yaml``` file and save them
+    > Note: That the Name* and Secret* is same as mentioned
+5. once this is done our deployment will take place automatically which we can see in the actions tab in github repo
+
+Now whenever there is any push to the repo it will automatically tigger the deployment in the heroku web app
