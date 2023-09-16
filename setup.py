@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 from typing import List
 
 PROJECT_NAME='housing-predictor'
-VERSION='0.0.4'
+VERSION='0.0.2'
 AUTHOR='Syed Shahlal'
 DESCRIPTION='This is a simple housing price predictor app'
 PACKAGES=['housing']
