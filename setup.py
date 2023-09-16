@@ -2,6 +2,7 @@ from setuptools import setup, find_packages
 from typing import List
 
 PROJECT_NAME='housing-predictor'
+VERSION='0.0.5'
 AUTHOR='Syed Shahlal'
 DESCRIPTION='This is a simple housing price predictor app'
 PACKAGES=['housing']
@@ -20,8 +21,7 @@ def get_requirements_list()->List[str]:
 
 setup(
     name=PROJECT_NAME,
-    setup_requires=['setuptools_scm'],  # Add this line
-    use_scm_version=True,
+    version=VERSION,
     author=AUTHOR,
     description=DESCRIPTION,
     packages=find_packages(),
