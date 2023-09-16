@@ -1,8 +1,10 @@
 from setuptools import setup, find_packages
 from typing import List
+from housing.logger import logging
+from version_manager import update_version
 
 PROJECT_NAME='housing-predictor'
-VERSION='0.0.2'
+# VERSION='0.0.3'
 AUTHOR='Syed Shahlal'
 DESCRIPTION='This is a simple housing price predictor app'
 PACKAGES=['housing']
@@ -21,9 +23,11 @@ def get_requirements_list()->List[str]:
 
 setup(
     name=PROJECT_NAME,
-    version=VERSION,
+    version=update_version(),
     author=AUTHOR,
     description=DESCRIPTION,
     packages=find_packages(),
     install_requires=get_requirements_list()
 )
+
+logging.info("Setup completed successfully")
