@@ -1,7 +1,8 @@
 from setuptools import setup, find_packages
 from typing import List
 from housing.logger import logging
-from version_manager import update_version
+from version_manager import VersionUpdater
+
 
 PROJECT_NAME='housing-predictor'
 # VERSION='0.0.3'
@@ -9,6 +10,9 @@ AUTHOR='Syed Shahlal'
 DESCRIPTION='This is a simple housing price predictor app'
 PACKAGES=['housing']
 REQUIREMENTS_FILE_PATH='requirements.txt'
+
+# Create an instance of VersionUpdater
+version_updater = VersionUpdater()
 
 
 def get_requirements_list()->List[str]:
@@ -23,7 +27,7 @@ def get_requirements_list()->List[str]:
 
 setup(
     name=PROJECT_NAME,
-    version=update_version(),
+    version=version_updater.update_version(),
     author=AUTHOR,
     description=DESCRIPTION,
     packages=find_packages(),

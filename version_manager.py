@@ -1,47 +1,25 @@
-import os
+class VersionUpdater:
+    def __init__(self, file_path='version.txt'):
+        self.file_path = file_path
+        self.current_version = self._read_version()
 
-DIR = os.getcwd()
+    def _read_version(self):
+        try:
+            with open(self.file_path, 'r') as file:
+                return file.read().strip()
+        except FileNotFoundError:
+            return "0.0.0"
 
-def update_version():
-    """
-    Updates the version number stored in a 'version.txt' file by incrementing the patch version.
+    def update_version(self):
+        major, minor, patch = map(int, self.current_version.split('.'))
+        patch += 1
+        new_version = f"{major}.{minor}.{patch}"
 
-    If the 'version.txt' file does not exist, it initializes the version to '0.0.0' and then increments the patch version.
+        with open(self.file_path, 'w') as file:
+            file.write(new_version)
 
-    The version is stored in the format 'major.minor.patch' where 'major' and 'minor' are integers, and 'patch' is incremented.
+        return new_version
 
-    After updating, the new version is printed, and the 'version.txt' file is updated with the new version.
-
-    Example:
-    - If the current version is '1.2.3', calling this function will update it to '1.2.4'.
-
-    Usage:
-    - Call this function to increment and update the version number in 'version.txt'.
-    """
-
-    # Read the current version from a file or initialize it if the file doesn't exist
-    FILE_NAME = 'version.txt'
-    FILE_PATH = os.path.join(DIR, FILE_NAME)
-    try:
-        with open(FILE_PATH, 'r') as file:
-            current_version = file.read()
-    except FileNotFoundError:
-        current_version = "0.0.0"
-
-    # Split the version string into its components (major, minor, patch)
-    major, minor, patch = map(int, current_version.split('.'))
-
-    # Increment the patch version
-    patch += 1
-
-    # Construct the new version string
-    new_version = f"{major}.{minor}.{patch}"
-
-
-
-    # Write the new version back to the file
-    with open(FILE_PATH, 'w') as file:
-        file.write(new_version)
-    
-        # Print the new version
-    return(new_version)
+if __name__ == "__main__":
+    version_updater = VersionUpdater()
+    new_version = version_updater.update_version()
