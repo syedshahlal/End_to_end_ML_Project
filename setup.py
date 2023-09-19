@@ -33,5 +33,3 @@ setup(
     packages=find_packages(),
     install_requires=get_requirements_list()
 )
-
-logging.info("Setup completed successfully")
