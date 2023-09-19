@@ -113,3 +113,5 @@ Now we will write the setup coed in our ```setup.py``` file and run it
 python setup.py install
 ```
  >Note: this will generate ```build``` , ```dist``` and ```housing_predictor.egg-info``` based on what values we have passed in the ```setup.py```
+
+I have created a ```create_folders.py``` file which has a list of folder we want to create once we run that file it will automatically created all the folders that we want to create under ```housing``` folder.
