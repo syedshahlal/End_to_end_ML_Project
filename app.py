@@ -13,7 +13,7 @@ def index():
         housing = HousingException(error_message=e, error_details=sys)
         logging.error(housing.error_message)
         logging.info("Main page is accessed")
-    return 'CI/CD pipeline with Heroku and Github has been setup successfully! This is a simple housing price predictor app.' + '\n' + 'Now we will cover entity and piplines'
+    return 'CI/CD pipeline with Heroku and Github has been setup successfully! This is a simple housing price predictor app.' + '\n' + 'Now we will cover entity and piplines' + '\n' + 'Working'
 
 if __name__ == '__main__':
     app.run(debug=True)
