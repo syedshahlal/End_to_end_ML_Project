@@ -7,7 +7,7 @@ from housing.constant import *
 from housing.exception import HousingException
 
 
-class Configuartion:
+class Configuration:
 
     def __init__(self,
         config_file_path:str =CONFIG_FILE_PATH,
@@ -222,7 +222,7 @@ class Configuartion:
             )
 
             training_pipeline_config = TrainingPipelineConfig(artifact_dir=artifact_dir)
-            logging.info(f"Training pipleine config: {training_pipeline_config}")
+            logging.info(f"Training pipeline config: {training_pipeline_config}")
             return training_pipeline_config
         except Exception as e:
             raise HousingException(e,sys) from e
