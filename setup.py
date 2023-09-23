@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 from typing import List
-from housing.logger import logging
+
 from version_manager import VersionUpdater
 
 
