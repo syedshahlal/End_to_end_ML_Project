@@ -7,7 +7,7 @@ target_folder = os.path.join(dir, 'housing')
 
 # print(target_folder)
 
-create_folders = ['exception','logger','pipeline', 'component','config','entity','utils', ]
+create_folders = ['exception','logger','pipeline', 'component','config','entity','util','artifact' ]
 for folder in create_folders:
     path = os.path.join(target_folder, folder)
     # print(path)
