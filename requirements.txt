@@ -5,6 +5,4 @@ sklearn
 pandas
 ipykernel
 PyYAML
-six
-tarfile
 -e .
