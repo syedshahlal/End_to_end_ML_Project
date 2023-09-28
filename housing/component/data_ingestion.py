@@ -1,5 +1,5 @@
 from housing.entity.config_entity import DataIngestionConfig
-import sys,os
+import sys, os
 from housing.exception import HousingException
 from housing.logger import logging
 from housing.entity.artifact_entity import DataIngestionArtifact
@@ -27,6 +27,9 @@ class DataIngestion:
 
             #folder location to download file
             tgz_download_dir = self.data_ingestion_config.tgz_download_dir
+            
+            if os.path.exists(tgz_download_dir):
+                os.remove(tgz_download_dir)
             
             os.makedirs(tgz_download_dir,exist_ok=True)
 
