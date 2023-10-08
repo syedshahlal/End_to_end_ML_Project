@@ -1,7 +1,7 @@
 numpy
 Flask
 gunicorn
-sklearn
+scikit-learn
 pandas
 ipykernel
 PyYAML
