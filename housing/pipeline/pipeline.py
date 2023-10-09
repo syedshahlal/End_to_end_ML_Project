@@ -8,8 +8,7 @@ from threading import Thread
 from typing import List
 
 from multiprocessing import Process
-from housing.entity.artifact_entity import ModelPusherArtifact, DataIngestionArtifact, ModelEvaluationArtifact
-from housing.entity.artifact_entity import DataValidationArtifact, DataTransformationArtifact, ModelTrainerArtifact
+from housing.entity.artifact_entity import ModelPusherArtifact, DataIngestionArtifact, ModelEvaluationArtifact, DataValidationArtifact, DataTransformationArtifact, ModelTrainerArtifact
 from housing.entity.config_entity import DataIngestionConfig, ModelEvaluationConfig
 from housing.component.data_ingestion import DataIngestion
 from housing.component.data_validation import DataValidation
