@@ -12,13 +12,14 @@ from housing.entity.artifact_entity import ModelPusherArtifact, DataIngestionArt
 from housing.entity.artifact_entity import DataValidationArtifact, DataTransformationArtifact, ModelTrainerArtifact
 from housing.entity.config_entity import DataIngestionConfig, ModelEvaluationConfig
 from housing.component.data_ingestion import DataIngestion
-# from housing.component.data_validation import DataValidation
-# from housing.component.data_transformation import DataTransformation
-# from housing.component.model_trainer import ModelTrainer
-# from housing.component.model_evaluation import ModelEvaluation
-# from housing.component.model_pusher import ModelPusher
+from housing.component.data_validation import DataValidation
+from housing.component.data_transformation import DataTransformation
+from housing.component.model_trainer import ModelTrainer
+from housing.component.model_evaluation import ModelEvaluation
+from housing.component.model_pusher import ModelPusher
 import os, sys
 from collections import namedtuple
+from datetime import datetime
 import pandas as pd
 from housing.constant import EXPERIMENT_DIR_NAME, EXPERIMENT_FILE_NAME
 
