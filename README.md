@@ -17,18 +17,18 @@ conda create -p venv python==3.11 -y
 conda activate venv/
 ```
 
-Create a ```requirements.txt``` file and add all the libraries required and install them
+Create a ```requirements.txt``` file add all the libraries required and install them
 ```
 pip install -r requirements.txt
 ```
 
-Now, we create the flask app file as ```app.py``` and write our code in it and then run the app
+Now, we create the flask app file as ```app.py``` and write our code in it, and then run the app
 ```
 python app.py
 ```
 
 ### 3. Github connections for push and pull
-To add file in the git repo
+To add the file in the git repo
 ```
 git add <filename>
 ```
@@ -36,7 +36,7 @@ or
 ```
 git add .
 ```
-> Note: If there are some file in our folder that we do not want to track or do versioning then we add them to the ```.gitignore``` file
+> Note: If there are some files in our folder that we do not want to track or do versioning then we add them to the ```.gitignore``` file
 
 To check the git status
 ```
@@ -51,7 +51,7 @@ To create a new version/commit all the changes by git
 ```
 git commit -m "your comment/message"
 ```
-To send version/changes to the github
+To send version/changes to the GitHub
 ```
 git push origin main
 ```
@@ -62,7 +62,7 @@ git remote -v
 ```
 
 ### 4. Setting up CI/CD Pipelines
-To setup CI/CD pipeline in Heroku we need 3 informations:
+To setup CI/CD pipeline in Heroku we need 3 information:
 
 1. HEROKU_EMAIL = sr.shahlal@gmail.com
 2. HEROKU_API_Key = <>
@@ -72,9 +72,9 @@ To setup CI/CD pipeline in Heroku we need 3 informations:
 ```
 docker build -t <image_name>:<tagname> .
 ```
-> Note: Image name for docker must be lowercase
+> Note: The image name for docker must be lowercase
 
-To list docker image
+To list the docker image
 ```
 docker images
 ```
@@ -84,12 +84,12 @@ Run docker image
 docker run -p 5000:5000 -e PORT=5000 b3bb833287a8
 ```
 
-To check running container in docker
+To check the running container in the docker
 ```
 docker ps
 ```
 
-To stop docker container
+To stop the docker container
 ```
 docker stop <container_id>
 ```
@@ -97,13 +97,13 @@ docker stop <container_id>
 ### 5. Building CI/CD Pipelines in Heroku APP
 
 1. Create a ```.github``` folder and inside the folder add another folder ```workflows``` in this workflows folder create a file ```main.yaml```
-2. ```main.yaml``` file write the github action flow
+2. ```main.yaml``` file write the GitHub action flow
 3. push the change to the git repo
-4. open the repo in github and go to setting/secrets/actions and create New repository secret for all the secrets that has been mentioned in the ```main.yaml``` file and save them
+4. open the repo in GitHub and go to setting/secrets/actions and create New repository secret for all the secrets that have been mentioned in the ```main.yaml``` file and save them
     > Note: That the ```Name*``` and ```Secret*``` is same as mentioned
-5. once this is done our deployment will take place automatically which we can see in the actions tab in github repo
+5. once this is done our deployment will take place automatically which we can see in the actions tab in the GitHub repo
 
-Now whenever there is any push to the repo it will automatically tigger the deployment in the heroku web app
+Now whenever there is any push to the repo it will automatically trigger the deployment in the heroku web app
 
 ### 6. Files and Folder creation for structuring the project 
 Moving ahead we will add a ```setup.py``` file and a folder ```housing``` that we'll contain a file inside it which has to be created as ```__init__.py```
@@ -114,4 +114,4 @@ python setup.py install
 ```
  >Note: this will generate ```build``` , ```dist``` and ```housing_predictor.egg-info``` based on what values we have passed in the ```setup.py```
 
-I have created a ```create_folders.py``` file which has a list of folder we want to create once we run that file it will automatically created all the folders that we want to create under ```housing``` folder.
+I have created a ```create_folders.py``` file which has a list of folders we want to create once we run that file it will automatically create all the folders that we want to create under the ```housing``` folder.
